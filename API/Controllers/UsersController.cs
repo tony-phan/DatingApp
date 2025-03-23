@@ -20,7 +20,7 @@ public class UsersController(DataContext context) : ControllerBase
         return users;
     }
 
-    [HttpGet("{id: int}")] // /api/users/2
+    [HttpGet("{id}")] // /api/users/2
     public async Task<ActionResult<AppUser>> GetUser(int id)
     {
         var user = await _context.Users.FindAsync(id);
